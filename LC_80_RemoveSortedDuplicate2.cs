@@ -10,7 +10,7 @@ namespace Solution
             int k = 2;
             for (int i = 2; i < nums.Length; i++)
             {
-                if (nums[i] != nums[i - 2])
+                if (nums[i] != nums[k - 2])
                 {
                     nums[k] = nums[i];
                     k++;
@@ -23,7 +23,9 @@ namespace Solution
     {
         static void Main(string[] args)
         {
-            int result = Solution.RemoveDuplicates([1, 1, 1, 2, 2, 3]);
+            int[] nums = new int[] { 1, 1, 1, 2, 2, 3 };
+            int result = Solution.RemoveDuplicates(nums);
+            Console.WriteLine(string.Join(", ", nums));
             Console.WriteLine(result);
         }
     }
